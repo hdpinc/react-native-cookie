@@ -45,5 +45,9 @@ export default {
             }
             retry();
         }) : null;
+    },
+
+    flush(): void {
+        NativeModules.RNCookieManager.flushCookie();
     }
 };

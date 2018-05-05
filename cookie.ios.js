@@ -30,5 +30,9 @@ export default {
 
     clear(url?: String): Promise {
         return url ? CookieManager.clearCookieFromURL(url) : CookieManager.clearCookies();
+    },
+
+    flush(): void {
+        // Nothing to do in iOS.
     }
 };

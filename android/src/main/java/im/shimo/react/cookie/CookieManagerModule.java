@@ -1,7 +1,8 @@
 package im.shimo.react.cookie;
 
-
+import android.os.Build;
 import android.util.Log;
+import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 
 import com.facebook.react.bridge.Promise;
@@ -107,6 +108,15 @@ public class CookieManagerModule extends ReactContextBaseJavaModule {
             }
 
             promise.resolve(null);
+        }
+    }
+
+    @ReactMethod
+    public void flushCookie() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            CookieSyncManager.getInstance().sync();
+        } else {
+            CookieManager.getInstance().flush();
         }
     }
 
