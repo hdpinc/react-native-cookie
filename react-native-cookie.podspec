@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/shimohq/react-native-cookie"
   s.platform     = :ios, "9.0"
 
-  s.source       = { :git => "https://github.com/shimohq/react-native-cookie.git" }
+  s.source       = { :git => "https://github.com/hdpinc/react-native-cookie.git" }
   s.source_files  = "ios/**/*.{h,m}"
 
   s.dependency 'React'
